@@ -18,7 +18,7 @@
       </div>
       <div class="status-bar__column">
         <span>110%</span>
-        <i class="fa-solid fa-battery-full fa-lg"></i>
+        <i class="fa-solid fa-battery-full fa-xl"></i>
         <i class="fa-solid fa-bolt-lightning"></i>
       </div>
     </div>
@@ -30,12 +30,23 @@
         number.
       </p>
     </header>
-    <form id="login-form">
-      <input type="text" placeholder="Email or phone number" />
-      <input type="password" placeholder="Password" />
-      <input type="submit" value="Log In" />
-      <input type="submit" value="Sign Up" />
-      <a href="#">Find Kokoa Account or Password</a>
+
+    <form action="friends.html" method="get" class="login-form">
+      <input
+        class="login-form__input"
+        name="username"
+        type="text"
+        placeholder="Email or phone number"
+      />
+      <input
+        class="login-form__input"
+        name="password"
+        type="password"
+        placeholder="Password"
+      />
+      <input type="submit" value="Log In" class="login-form__btn" />
+      <input type="submit" value="Sign Up" class="login-form__btn" />
+      <a href="#" class="login-form__a">Find Kokoa Account or Password</a>
     </form>
 
     <script
