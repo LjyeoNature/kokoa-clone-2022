@@ -9,3 +9,12 @@
   color: white;
   font-weight: 600;
 }
+.screen-header-cog {
+  background-color: tomato;
+  width: 6.5px;
+  height: 6.5px;
+  border-radius: 15px;
+  position: absolute;
+  right: 17px;
+  top: 63px;
+}
