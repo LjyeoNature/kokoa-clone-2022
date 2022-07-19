@@ -1,6 +1,6 @@
 #chat-screen {
   background-color: #abc1d1;
-  height: 11000vh;
+  height: 500vh;
 }
 #chat-screen .alt-header,
 #chat-screen .status-bar {
@@ -18,17 +18,31 @@
   top: 10px;
   z-index: 1;
 }
+
+@keyframes fadeIn {
+  from{
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to{
+    transform: none;
+    opacity: 1;
+  }
+}
+
+
 .main-chat {
-  margin-top: 120px;
+  margin-top: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: fadeIn 0.8s linear;
 }
 .chat__timestamp {
   color: white;
   background-color: #92a4b2;
   font-size: 14px;
-  padding: 8px 15px;
+  padding:15px;
   border-radius: 25px;
   margin-bottom: 25px;
 }
@@ -41,7 +55,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  margin-right: 15px;
+  margin-right: 10px;
 }
 .message__author {
   margin-bottom: 10px;
@@ -97,6 +111,7 @@
   padding: 5px 25px;
   box-sizing: border-box;
   align-items: center;
+  transition: all 0.3s ease-in-out;
 }
 .reply .reply__column:first-child {
   width: 10%;
@@ -113,16 +128,18 @@
   width: 100%;
   border: var(--main-border);
   border-radius: 20px;
+  box-sizing: border-box;
+  transition: all .3s ease-in-out;
 }
 .reply__column:last-child > i,
 .reply__column:last-child button {
   position: absolute;
-  right: -18px;
+  right: 3px;
   top: 2px;
 }
 
 .reply__column:last-child > i {
-  right: 25px;
+  right: 40px;
   top: 18px;
 }
 .reply__column button {
@@ -138,4 +155,52 @@
 .reply__column button:focus,
 .reply__column button:active {
   outline: none;
+}
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-face-smile,
+.reply:focus-within button {
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-face-smile,
+.reply:focus-within button {
+  opacity: 0;
+}
+
+.reply:focus-within input {
+  width: 98vw;
+  transform: translateX(-10%) translateY(-80px);
+}
+
+.reply:focus-within {
+  transform: translateY(80px);
+}
+
+#no-mobile {
+  display: none;
+}
+
+@media screen and (min-width:645px) {
+  #no-mobile {
+    position: fixed;
+    z-index: 99;
+    height: 100vh;
+    background-color: var(--yellow);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    top: 0;
+    font-weight: 600;
+  }
+
+  body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  
 }
